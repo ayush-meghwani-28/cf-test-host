@@ -30,6 +30,22 @@
         { "name": "second", "type": "number" }
       ],
       "result": { "type": "number" }
+    },
+    {
+      "id": "COUNTER",
+      "name": "COUNTER",
+      "description": "Counts up by 1 every second.",
+      "parameters": [],
+      "options": { "stream": true },
+      "result": { "type": "number" }
+    },
+    {
+      "id": "RANDOM",
+      "name": "RANDOM",
+      "description": "Returns a new random number between 0-999 every second.",
+      "parameters": [],
+      "options": { "stream": true },
+      "result": { "type": "number" }
     }
   ]
 }
