@@ -1,1 +1,49 @@
-!function(){"use strict";CustomFunctions.associate("ADD",(function(n,t){return n+t})),CustomFunctions.associate("TESTID",(function(n,t){return n+t})),CustomFunctions.associate("CLOCK",(function(n){var t=setInterval((function(){var t=(new Date).toLocaleTimeString();n.setResult(t)}),1e3);n.onCanceled=function(){clearInterval(t)}})),CustomFunctions.associate("INCREMENT",(function(n,t){var e=0,o=setInterval((function(){e+=n,t.setResult(e)}),1e3);t.onCanceled=function(){clearInterval(o)}})),CustomFunctions.associate("TEST_NAME",(function(n,t){var e=0,o=setInterval((function(){e+=n,t.setResult(e)}),1e3);t.onCanceled=function(){clearInterval(o)}})),CustomFunctions.associate("LOG",(function(n){return console.log(n),n}))}();
+(function () {
+  "use strict";
+
+  // ADD: returns sum of two numbers
+  CustomFunctions.associate("ADD", function (a, b) {
+    return a + b;
+  });
+
+  // MULTIPLY: returns product of two numbers
+  CustomFunctions.associate("MULTIPLY", function (a, b) {
+    return a * b;
+  });
+
+  // SQUARE: returns the square of a number
+  CustomFunctions.associate("SQUARE", function (n) {
+    return n * n;
+  });
+
+  // GREET: returns a greeting string
+  CustomFunctions.associate("GREET", function (name) {
+    return "Hello, " + name + "!";
+  });
+
+  // STOPWATCH: streams elapsed seconds since the function started
+  CustomFunctions.associate("STOPWATCH", function (handler) {
+    var elapsed = 0;
+    var timer = setInterval(function () {
+      handler.setResult(elapsed++);
+    }, 1000);
+    handler.onCanceled = function () { clearInterval(timer); };
+  });
+
+  // RANDOM: streams a random number between min and max every second
+  CustomFunctions.associate("RANDOM", function (min, max, handler) {
+    var timer = setInterval(function () {
+      var value = Math.random() * (max - min) + min;
+      handler.setResult(Math.round(value * 100) / 100);
+    }, 1000);
+    handler.onCanceled = function () { clearInterval(timer); };
+  });
+
+  // LOG: logs a message to the console and returns it
+  CustomFunctions.associate("LOG", function (message) {
+    console.log(message);
+    return message;
+  });
+
+})();
+

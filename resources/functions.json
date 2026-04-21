@@ -2,51 +2,71 @@
     "allowCustomDataForDataTypeAny": true,
     "functions": [
         {
-            "description": "Add two numbers",
+            "description": "Returns the sum of two numbers.",
             "id": "ADD",
             "name": "ADD",
             "parameters": [
-                { "description": "First number", "name": "first", "type": "number" },
-                { "description": "Second number", "name": "second", "type": "number" }
+                { "description": "First number", "name": "a", "type": "number" },
+                { "description": "Second number", "name": "b", "type": "number" }
             ],
             "result": { "type": "number" }
         },
         {
-            "description": "Add two numbers",
-            "id": "TESTID",
-            "name": "TESTID",
+            "description": "Returns the product of two numbers.",
+            "id": "MULTIPLY",
+            "name": "MULTIPLY",
             "parameters": [
-                { "description": "First number", "name": "first", "type": "number" },
-                { "description": "Second number", "name": "second", "type": "number" }
+                { "description": "First number", "name": "a", "type": "number" },
+                { "description": "Second number", "name": "b", "type": "number" }
             ],
             "result": { "type": "number" }
         },
         {
-            "description": "Displays the current time once a second",
-            "id": "CLOCK",
-            "name": "CLOCK",
-            "options": { "stream": true },
-            "parameters": [],
+            "description": "Returns the square of a number.",
+            "id": "SQUARE",
+            "name": "SQUARE",
+            "parameters": [
+                { "description": "The number to square", "name": "n", "type": "number" }
+            ],
+            "result": { "type": "number" }
+        },
+        {
+            "description": "Returns a greeting for the given name.",
+            "id": "GREET",
+            "name": "GREET",
+            "parameters": [
+                { "description": "Name to greet", "name": "name", "type": "string" }
+            ],
             "result": { "type": "string" }
         },
         {
-            "description": "Increments a value once a second.",
-            "id": "INCREMENT",
-            "name": "INCREMENT",
+            "description": "Streams elapsed seconds since the function started.",
+            "id": "STOPWATCH",
+            "name": "STOPWATCH",
+            "options": { "stream": true },
+            "parameters": [],
+            "result": { "type": "number" }
+        },
+        {
+            "description": "Streams a random number between min and max, updating every second.",
+            "id": "RANDOM",
+            "name": "RANDOM",
             "options": { "stream": true },
             "parameters": [
-                { "description": "Amount to increment", "name": "incrementBy", "type": "number" }
+                { "description": "Minimum value", "name": "min", "type": "number" },
+                { "description": "Maximum value", "name": "max", "type": "number" }
             ],
             "result": { "type": "number" }
         },
         {
-            "description": "Writes a message to console.log().",
+            "description": "Logs a message to the console and returns it.",
             "id": "LOG",
             "name": "LOG",
             "parameters": [
-                { "description": "String to write.", "name": "message", "type": "string" }
+                { "description": "Message to log", "name": "message", "type": "string" }
             ],
-            "result": {}
+            "result": { "type": "string" }
         }
     ]
 }
+
