@@ -1,51 +1,52 @@
 {
-  "allowCustomDataForDataTypeAny": false,
-  "functions": [
-    {
-      "id": "ADD",
-      "name": "ADD",
-      "description": "Adds two numbers.",
-      "parameters": [
-        { "name": "first", "type": "number" },
-        { "name": "second", "type": "number" }
-      ],
-      "result": { "type": "number" }
-    },
-    {
-      "id": "TESTID",
-      "name": "TESTID",
-      "description": "Add two numbers",
-      "parameters": [
-        { "name": "first", "type": "number" },
-        { "name": "second", "type": "number" }
-      ],
-      "result": { "type": "number" }
-    },
-    {
-      "id": "MULTIPLY",
-      "name": "MULTIPLY",
-      "description": "Multiplies two numbers.",
-      "parameters": [
-        { "name": "first", "type": "number" },
-        { "name": "second", "type": "number" }
-      ],
-      "result": { "type": "number" }
-    },
-    {
-      "id": "COUNTER",
-      "name": "COUNTER",
-      "description": "Counts up by 1 every second.",
-      "parameters": [],
-      "options": { "stream": true },
-      "result": { "type": "number" }
-    },
-    {
-      "id": "RANDOM",
-      "name": "RANDOM",
-      "description": "Returns a new random number between 0-999 every second.",
-      "parameters": [],
-      "options": { "stream": true },
-      "result": { "type": "number" }
-    }
-  ]
+    "allowCustomDataForDataTypeAny": true,
+    "functions": [
+        {
+            "description": "Add two numbers",
+            "id": "ADD",
+            "name": "ADD",
+            "parameters": [
+                { "description": "First number", "name": "first", "type": "number" },
+                { "description": "Second number", "name": "second", "type": "number" }
+            ],
+            "result": { "type": "number" }
+        },
+        {
+            "description": "Add two numbers",
+            "id": "TESTID",
+            "name": "TESTID",
+            "parameters": [
+                { "description": "First number", "name": "first", "type": "number" },
+                { "description": "Second number", "name": "second", "type": "number" }
+            ],
+            "result": { "type": "number" }
+        },
+        {
+            "description": "Displays the current time once a second",
+            "id": "CLOCK",
+            "name": "CLOCK",
+            "options": { "stream": true },
+            "parameters": [],
+            "result": { "type": "string" }
+        },
+        {
+            "description": "Increments a value once a second.",
+            "id": "INCREMENT",
+            "name": "INCREMENT",
+            "options": { "stream": true },
+            "parameters": [
+                { "description": "Amount to increment", "name": "incrementBy", "type": "number" }
+            ],
+            "result": { "type": "number" }
+        },
+        {
+            "description": "Writes a message to console.log().",
+            "id": "LOG",
+            "name": "LOG",
+            "parameters": [
+                { "description": "String to write.", "name": "message", "type": "string" }
+            ],
+            "result": {}
+        }
+    ]
 }
