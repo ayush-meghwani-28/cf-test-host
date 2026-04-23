@@ -84,6 +84,33 @@
                 { "description": "Any input value", "name": "value", "type": "string" }
             ],
             "result": { "type": "string" }
+        },
+        {
+            "description": "Missing return type test: function has no return statement, returns undefined.",
+            "id": "NORETURN",
+            "name": "NORETURN",
+            "parameters": [
+                { "description": "First number", "name": "a", "type": "number" },
+                { "description": "Second number", "name": "b", "type": "number" }
+            ],
+            "result": { "type": "number" }
+        },
+        {
+            "description": "Missing parameter test: call with only first argument, second defaults to 0.",
+            "id": "MISSINGPARAM",
+            "name": "MISSINGPARAM",
+            "parameters": [
+                { "description": "First number", "name": "a", "type": "number" },
+                { "description": "Second number (optional)", "name": "b", "type": "number", "optional": true }
+            ],
+            "result": { "type": "number" }
+        },
+        {
+            "description": "Syntax error test: throws a SyntaxError during execution.",
+            "id": "SYNTAXERR",
+            "name": "SYNTAXERR",
+            "parameters": [],
+            "result": { "type": "string" }
         }
     ]
 }

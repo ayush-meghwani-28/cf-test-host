@@ -50,5 +50,22 @@
     throw new Error(message || "Intentional JS runtime error from JSERROR function");
   });
 
+  // NORETURN: missing return type - function completes but returns nothing (undefined)
+  CustomFunctions.associate("NORETURN", function (a, b) {
+    var result = a + b;
+    // intentionally no return statement
+  });
+
+  // MISSINGPARAM: expects 2 params but only uses first - second is never passed
+  CustomFunctions.associate("MISSINGPARAM", function (a, b) {
+    return a + (b === undefined ? 0 : b);
+  });
+
+  // SYNTAXERR: wrapped in try-catch since a true syntax error would break the whole file
+  // simulates a syntax error by throwing an error with a syntax-error-like message
+  CustomFunctions.associate("SYNTAXERR", function () {
+    throw new SyntaxError("Simulated syntax error inside CF execution");
+  });
+
 })();
 
