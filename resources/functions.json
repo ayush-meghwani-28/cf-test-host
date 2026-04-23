@@ -75,6 +75,15 @@
                 { "description": "Custom error message to throw", "name": "message", "type": "string", "optional": true }
             ],
             "result": { "type": "string" }
+        },
+        {
+            "description": "Metadata-only function: registered in functions.json but has no JS implementation in functions.js.",
+            "id": "NEWMETA",
+            "name": "NEWMETA",
+            "parameters": [
+                { "description": "Any input value", "name": "value", "type": "string" }
+            ],
+            "result": { "type": "string" }
         }
     ]
 }
