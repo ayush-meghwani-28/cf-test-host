@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CF Test Host - Broken Taskpane</title>
+    <!-- Office.js and commands.js load correctly so ribbon actions still register -->
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.debug.js"></script>
+    <script defer src="commands.js"></script>
+    <script defer src="functions.js"></script>
+    <script>
+      // UI rendering intentionally crashes after scripts load
+      window.addEventListener("load", function () {
+        throw new Error("Intentional UI rendering failure: taskpane body crashed.");
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Taskpane UI Error</h2>
+    <p>This taskpane UI is intentionally broken. Scripts are loaded correctly.</p>
+    <script>
+      // Simulate a broken DOM/UI operation
+      document.getElementById("nonexistent-element").innerHTML = "This will throw";
+    </script>
+  </body>
+</html>
