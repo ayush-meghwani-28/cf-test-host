@@ -66,6 +66,15 @@
                 { "description": "Message to log", "name": "message", "type": "string" }
             ],
             "result": { "type": "string" }
+        },
+        {
+            "description": "Deliberately throws a JS runtime error. Use to test CF error handling.",
+            "id": "JSERROR",
+            "name": "JSERROR",
+            "parameters": [
+                { "description": "Custom error message to throw", "name": "message", "type": "string", "optional": true }
+            ],
+            "result": { "type": "string" }
         }
     ]
 }

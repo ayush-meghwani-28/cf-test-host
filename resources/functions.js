@@ -45,5 +45,10 @@
     return message;
   });
 
+  // JSERROR: deliberately throws a JS runtime error to test CF error handling
+  CustomFunctions.associate("JSERROR", function (message) {
+    throw new Error(message || "Intentional JS runtime error from JSERROR function");
+  });
+
 })();
 
